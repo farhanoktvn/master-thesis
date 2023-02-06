@@ -8,6 +8,7 @@ To be written ...
 
 ## Project Structure
 
+```
 ├── README.md — This file.
 └── obsidian
     ├── lit_review
@@ -15,6 +16,7 @@ To be written ...
     │   └── paper_notes — Notes on papers.
     └── logs — Work logs.
         └── meetings — Meeting notes.
+```
 
 ## Milestones
 
