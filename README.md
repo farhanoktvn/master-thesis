@@ -11,11 +11,12 @@ To be written ...
 ```
 ├── README.md — This file.
 └── obsidian
-    ├── lit_review
-    │   ├── Ideas.md — Relevant ideas, phrases, and keywords.
-    │   └── paper_notes — Notes on papers.
-    └── logs — Work logs.
-        └── meetings — Meeting notes.
+│   ├── lit_review
+│   │   ├── Ideas.md — Relevant ideas, phrases, and keywords.
+│   │   └── paper_notes — Notes on papers.
+│   └── logs — Work logs.
+│       └── meetings — Meeting notes.
+└── sandbox — Sandbox for scripts and experiments.
 ```
 
 ## Milestones
