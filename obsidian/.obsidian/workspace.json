@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lit-review/ideas/evaluation method.md",
+                "file": "lit-review/ideas/single-model deep learning.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lit-review/ideas/evaluation method.md",
+                "file": "lit-review/ideas/single-model deep learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lit-review/ideas/evaluation method.md",
+                "file": "lit-review/ideas/single-model deep learning.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lit-review/ideas/evaluation method.md"
+                "file": "lit-review/ideas/single-model deep learning.md"
               }
             }
           }
@@ -162,13 +162,14 @@
   "active": "e8baa7998427643c",
   "lastOpenFiles": [
     "lit-review/ideas/multi-model deep learning.md",
-    "lit-review/ideas/single-model deep learning.md",
+    "lit-review/ideas/evaluation method.md",
     "lit-review/ideas/classical machine learning.md",
+    "lit-review/ideas/single-model deep learning.md",
+    "logs/2023-03-01.md",
     "logs/meetings/2023-03-02.md",
     "logs/meetings/2023-02-20.md",
     "logs/meetings/2023-02-08.md",
     "logs/meetings/2023-02-03.md",
-    "logs/2023-03-01.md",
     "logs/2023-02-27.md",
     "logs/2023-02-24.md",
     "logs/2023-02-22.md",
@@ -180,7 +181,6 @@
     "Untitled.md",
     "lit-review/paper-notes/Intra-operative Brain Tumor Detection with Deep Learning-Optimized Hyperspectral Imaging.md",
     "lit-review/paper-notes/HELICoiD project — a new use of hyperspectral imaging for brain cancer detection in real-time during neurosurgical operations.md",
-    "lit-review/ideas/evaluation method.md",
     "lit-review/outline.md",
     "lit-review/reading-list.md",
     "lit-review/paper-notes/Trends in Deep Learning for Medical Hyperspectral Image Analysis.md",
