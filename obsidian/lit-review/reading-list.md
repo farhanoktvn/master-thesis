@@ -1,0 +1,20 @@
+
+- [x] Robust deep learning-based semantic organ segmentation in hyperspectral images
+- [x] Hyperspectral imaging for in-vivo/exvivo tissue analysis of human brain cancer
+- [ ] Review on the Application of Hyperspectral Imaging Technology of the Exposed Cortex in Cerebral Surgery
+- [x] Hyperspectral Imaging for Glioblastoma Surgery: Improving Tumor Identification Using a Deep Spectral-Spatial Approach
+- [x] Intra-operative Brain Tumor Detection with Deep Learning-Optimized Hyperspectral Imaging
+- [x] HELICoiD project: a new use of hyperspectral imaging for brain cancer detection in real-time during neurosurgical operations
+- [x] Classifications of Multispectral Colorectal Cancer Tissues Using Convolution Neural Network
+- [x] SpecTr: Spectral Transformer for Hyperspectral Pathology Image Segmentation
+- [ ] Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in MRI Images
+- [ ] TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation
+- [x] Fusing Multiple Deep Models for In Vivo Human Brain Hyperspectral Image Classification to Identify Glioblastoma Tumor
+- [ ] Manifold Embedding and Semantic Segmentation for Intraoperative Guidance With Hyperspectral Brain Imaging
+- [ ] Hyperspectral Imaging for the Detection of Glioblastoma Tumor Cells in H&E Slides Using Convolutional Neural Networks
+- [ ] Parallel K-Means Clustering for Brain Cancer Detection Using Hyperspectral Images
+- [ ] Most Relevant Spectral Bands Identification for Brain Cancer Detection Using Hyperspectral Imaging
+- [ ] In-vivo Hyperspectral Human Brain Image Database for Brain Cancer Detection
+- [ ] In-Vivo and Ex-Vivo Tissue Analysis through Hyperspectral Imaging Techniques: Revealing the Invisible Features of Cancer
+- [ ] Trends in Deep Learning for Medical Hyperspectral Image Analysis
+- [ ] An Intraoperative Visualization System Using Hyperspectral Imaging to Aid in Brain Tumor Delineation
