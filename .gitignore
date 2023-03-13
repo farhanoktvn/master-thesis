@@ -1,3 +1,7 @@
+## Project specific ##
+sandbox/dataset/*
+
+
 ## MacOS ##
 # General
 .DS_Store

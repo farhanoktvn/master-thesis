@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+\bibliographystyle{abbrvnat}
+
+\begin{document}
+
+% Title of Proposal
+\begin{center}
+    \textbf{\Large Multi-spectral Imaging Analysis of Brain Tissue Dissection During Neurosurgery}
+
+    \vspace{0.5cm}
+    {\large MRes Thesis Literature Review}
+         
+    \vspace{1cm}
+    \textbf{Muhammad F. Oktavian} \\
+    Student ID: 02355662
+
+    \vspace{0.5cm}
+    March 2023 \\
+    Imperial College London
+\end{center}
+
+% \vspace{1cm}
+% \paragraph{}
+% This is the space for abstract
+% \vspace{1cm}
+
+\section{Introduction}
+    \paragraph{}
+    Images that mimic visible light or colours are often represented digitally as a combination of three colours: red, green and blue (RGB). However, producing an image with RGB values introduces information loss as it does not store information on the wavelengths between each colour. Multi-spectral imaging minimises the information lost in the imaging process by representing each pixel as a spectrum of wavelengths, rather than three colours found in RGB.
+    
+    \paragraph{}
+    Brain tumours are tumours that affect the central nervous system that can develop in both children and adults. These tumours can be classified based on their biopsy sample characteristics under the microscope. Nevertheless, some tumours are very hard to distinguish, as they are visually indifferent to their surrounding tissue \cite{collins_brain_2004}. Maximal tumour resection through surgical operation is still one the main treatment for brain tumour \cite{bush_current_2017}. However, the indifferent visual appearance of a tumour might make it difficult to delineate the margin between the tumour and healthy tissue.
+
+    \paragraph{}
+    This project will explore the use of multi-spectral imaging to analyse brain tissue during neurosurgical operations. The outcome of this project will be a process to extract pixel-based segmentation based on the images taken using a multi-spectral camera system. The analysed spatial and spectral information gathered over the course of the procedure is presumed to be valuable to aid decision-making when resecting brain tumours.
+
+    \paragraph{}
+    The process will be divided into three stages. In the first stage, which is called preprocessing, all images gathered during the operation will be standardised using appropriate techniques depending on the image characteristics. The second stage is the segmentation of tissue based on the spectral value of each pixel using learning models with preprocessed images as the model input. In this stage, several models will be implemented for segmenting tissue images. The models will then be evaluated using a set of metrics in the next and last stage, evaluation. The individual metric scores of each model will be considered and compared with each other to generate a ranking table which will determine the most optimum model.
+
+
+\section{Medical Multi-spectral Imaging}
+    \paragraph{}
+    The use of multi-spectral imaging relies on the idea that when radiated using a spectrum of electromagnetic waves, different materials will react differently \cite{wu_review_2022}. Based on these reactions, the detector can acquire distinct electromagnetic radiation values coming from each material, through reflection. A channel in a multi-spectral image can then be defined as the value reflected off the material given a single electromagnetic band. Spatial information is obtained by acquiring the reflection on a planar detector, creating a two-dimensional image. Then, spectral information is acquired by repeating the same process with different bands, essentially adding more channels to the image, resulting in a cube-like image structure where each pixel stores the information of multiple electromagnetic bands.
+
+    \paragraph{}
+    Research on the use of multi-spectral images has been conducted across several domains. It has found its use in art science to identify paints used on a painting \cite{pelagotti_multispectral_2008} and enhance details of cave wall paintings \cite{legnaioli_recovery_2013}. There had also been a growing number of multi-spectral imaging implementations in agriculture, ranging from terrain sensing \cite{berni_thermal_2009} to evaluating food safety and quality \cite{qin_hyperspectral_2013}.
+
+    \paragraph{}
+    Medical imaging also benefits from the use of multi-spectral imaging. The type of tissues along with their content such as blood, water, melanin, fat and yellow pigments affect the optical coefficients when radiated by electromagnetic bands ranging from 400nm to 1300nm \cite{jacques_optical_2013}. Furthermore, several research based on the analysis of multi-spectral images has been conducted in the medical domain. Multi-spectral image analysis has been shown to identify residual tumours present after breast cancer resection \cite{panasyuk_medical_2007}, evaluate the development of bruises on the skin \cite{randeberg_hyperspectral_2006} and classify liver tissues \cite{hashimoto_tissue_2017}.
+
+    \subsection*{Multi-spectral Imaging in Neurosurgery}
+    \paragraph{}
+    Neurosurgery is a branch of surgery that concerns the treatment of diseases affecting the nervous system, such as the brain and spinal cord. Medical staff that specialise in neurosurgery is called a neurosurgeon. The are many neurological diseases that neurosurgeons handle as a part of the hospital team, one of these cases is brain tumours. Each year, about 12,300 people are diagnosed with either benign or malignant brain tumours \cite{cruk_brain_2023}. There are several strategies that are used to treat brain tumours, including radiotherapy using high-energy x-rays and chemotherapy using anti-cancer drugs. However, surgery is the main treatment for most tumours \cite{bush_current_2017, cruk_brain_2023} and relevant information available is crucial in maximising surgical success.
+
+    \paragraph{}
+    There are some imaging modalities that have been commonly used to diagnose and treat brain tumours, namely computed tomography (CT) and magnetic resonance imaging (MRI). Although information acquired by these imaging modalities is beneficial, most images are only used in the decision-making process prior to surgery as they have some disadvantages. One of the main drawbacks of CT and MRI is the need for a specialised room for their procedure due to the size of the machines. Staffs also need to wear heavy lead-grown to protect them from x-ray radiation throughout CT procedures. Furthermore, the use of strong magnets in MRI limits the use of equipment made out of metal as they can be attracted to the machine.
+    
+    \paragraph{}
+    There are other challenges that may be faced when using pre-operative image data. One of the neurosurgeon's tasks in a surgical procedure is to map the actual location of the tumour relative to the references based on its position in the image. However, while the information is enough for the surgeon to find the general region of the tumour, the exact size and boundary of the tumour might be difficult to infer as the patient's body might move over the procedure, which is known as brain shift \cite{gerard_brain_2017}. Multi-spectral imaging solves the problems mentioned, as it offers a non-invasive technique with a smaller-sized machine with the ability to acquire spatial and spectral information during surgery.
+
+    \paragraph{}
+    There had been several publications discussing the analysis of multi-spectral images for neurosurgery, especially in the cerebral region. Overall, the analyses that have been done on multi-spectral images can be categorised into two main areas, brain tissue metabolic and haemodynamic, and brain cancer diagnosis \cite{wu_review_2022}. Brain tissue metabolic and haemodynamic concerns chemical changes present in the cerebral tissue, such as oxygenation. One study showed that cerebral oxygenation and metabolism can be obtained from multi-spectral images based on near-infrared bands \cite{nguyen_hyperspectral_2019}. For brain cancer diagnosis, most research was focused on classifying types of tissue, ultimately identifying the cancerous area and its boundary. The use of visible and near-infrared bands has been shown to be suitable to achieve segmentation \cite{fabelo_helicoid_2016}. This leads to the project's aim of developing a method of analysis for multi-spectral brain images.
+
+
+\section{Multi-spectral Image Analysis}
+    \subsubsection*{Image Preprocessing}
+    \paragraph{}
+    Preprocessing is a crucial first step before analysing image data since raw data collected using a multi-spectral camera is not ideal to be used directly for analysis \cite{wu_review_2022}. This is the case since the images collected might not share the same attributes, such as noise levels and illumination values. Preprocessing the images will ensure the data is within a certain expectation, minimising any variability in the later stages of the process.
+    
+    \paragraph{}
+    There are some methods that can be utilised to preprocess multi-spectral image data. In some processes, the number of bands is filtered in an effort to minimise data size without omitting important information \cite{fabelo_helicoid_2016, ortega_hyperspectral_2020}. The process involves averaging neighbouring spectral bands. First, an arbitrary number is set as the reducing factor. Spectral bands are then chosen based on the reducing factor with equal spacing between them. The selected bands can then be averaged with values on immediate higher and lower bands.
+    
+    \paragraph{}
+    Another reason for using band filtering is to remove known poor-quality bands on each end of the spectrum, which are specific to the camera performance used. In the paper by Manni et al. and Hao et al., wavelengths from 400—440nm and 902—1000nm were omitted, removing 183 spectral bands \cite{hao_fusing_2021, manni_hyperspectral_2020}. Since it resulted in a lower number of spectral bands, the dimensionality of the data is also reduced.
+
+    \paragraph{}
+    White and dark reference images are also acquired and used in the processing stage, mainly to get the room ambience illumination conditions and avoid dark current from the camera system \cite{hao_fusing_2021, manni_hyperspectral_2020, seidlitz_robust_2022, fabelo_intraoperative_2018, ravi_manifold_2017}. The white reference image is taken by taking an image of an object that reflects 99\% of the incoming light, while the dark image is taken by closing the shutter. Other methods that are used in the preprocessing stage are spectral normalisation \cite{hao_fusing_2021, fabelo_helicoid_2016, seidlitz_robust_2022, yun_spectr_2021} and hyperspectral signal identification by minimum error filter (HySIME) \cite{bioucas-dias_hyperspectral_2008, hao_fusing_2021, ravi_manifold_2017}.
+
+
+    \subsubsection*{Image Segmentation}
+    \paragraph{}
+    Semantic segmentation is the process of assigning labels or finding regions of interest in an image. This process can be achieved by using a learning model, which can be categorised into two main approaches, classical machine learning and deep learning \cite{wu_review_2022}.
+    
+    \paragraph{}
+    Some classical machine learning models have been tried to accomplish segmentation for brain multi-spectral images, including support vector machine (SVM), random forest (RF), k-means clustering, and multi-layer perceptron (MLP) \cite{fabelo_helicoid_2016, manni_hyperspectral_2020, leon_hyperspectral_2022, giannantonio_intra-operative_2023}. SVM is a linear-based learning model that creates an \(n-1\) boundary for \(n\) dimensional data. It can also be used to learn non-linear classification using the radial basis function as its kernel \cite{giannantonio_intra-operative_2023}. Random forest is a learning model based on the decision tree. For each tree, there is a single node at the top that acts as the root of the tree. Each node has two child nodes, therefore the path or the child node that the input takes will be determined by the criteria observed by that particular node. In random forest, multiple decision trees are used as a voting mechanism. As a result, the outcome that is selected is the one that has the most vote. Multilayer perceptron is a linear model that mimics neurons found in humans. There are three layers in MLP, the input layer, the hidden layer and the output layer. The hidden layer takes values from the input layer and multiplies them by coefficients with added bias. The calculations in the hidden layer are then passed to the output layer. The main difference between MLP and deep learning is the number of layers in the model.
+    
+    \paragraph{}
+    In the recent decade, there has been an increase in published deep-learning models and their application for multi-spectral images following higher computing performance \cite{khan_trends_2021}.  While the U-Net model \cite{ronneberger_u-net_2015} is used in tissue segmentation \cite{seidlitz_robust_2022}, most tumour analyses used basic convolutional neural network (CNN) architecture \cite{manni_hyperspectral_2020, giannantonio_intra-operative_2023, haj-hassan_classifications_2017}. The main concept in CNN is the use of convolution filters. These filters, usually with size \(n \times n\), transform an image based on the filter characteristics such as highlighting edges or blurring the image itself. One disadvantage of image-based deep learning models such as U-Net and CNN is that they only rely on spatial information. Hence, the spectral information offered by multi-spectral images might not be fully exploited. To resolve this issue, some papers use CNN in tandem with a secondary model such as CNN+SVM \cite{manni_hyperspectral_2020}, CNN+Transformer \cite{yun_spectr_2021} and CNN+Spectral Phasor \cite{hao_fusing_2021}.
+    
+    \paragraph{}
+    It seems to be the case that there has not been a single method that is fit for all segmentation problems. While every research uses similar approaches for the learning model, the preprocessing techniques opted by them may vary. This resulted in varying claims of accuracy, even for similar models. For example, the HELICoiD project tested SVM, RF and MLP to classify tissue types during brain operation with RF having the highest accuracy \cite{fabelo_helicoid_2016}. However, another paper also tested the same models but had MLP as the model with the highest accuracy \cite{giannantonio_intra-operative_2023}. The difference in the dataset may also explain the discrepancy in the results. Therefore, multiple learning models need to be implemented and compared against each other to determine the model best suited for the case.
+    
+
+    \subsubsection*{Model Evaluation}
+    \paragraph{}
+    Evaluation metrics are needed to compare the performance between learning models. For a given model, the evaluation will be done by comparing the output image of the model with its ground truth pair. The pixel pairs are then classified as true/false positive/negative. Depending on the selected method of evaluation, the classified pixel pairs can then be evaluated individually as a pixel-by-pixel comparison, or used as an argument for a region-based evaluation method.
+    
+    \paragraph{}
+    There are multiple metrics that are used to evaluate segmentation models. For pixel-by-pixel comparison, some papers used accuracy with sensitivity and specificity as the main metrics \cite{fabelo_helicoid_2016, manni_hyperspectral_2020}. Accuracy is the measure of accurate positive and negative classification given the whole data. While sensitivity is the ratio of correctly classified positives to the actual positive data counts. Specificity works similarly to sensitivity but it measures the negatives instead of the positives. Let \(TP\), \(FP\), \(TN\) and \(FN\) be defined as true positive, false positive, true negative and false negative respectively. Therefore, accuracy is defined as 
+    \[accuracy = \frac{TP+TN}{TP+FP+TN+FN}\]
+    with sensitivity and specificity defined as
+    \[sensitivity = \frac{TP}{TP+FN}\]
+    \[specificity = \frac{TN}{TN+FP}\]
+    
+    \paragraph{}
+    Metrics based on intersecting or overlapping areas, such as the Sørensen–Dice coefficient (DSC) \cite{dice_measures_1945} and Jaccard similarity coefficient (JSC) \cite{murphy_finley_1996} have also been found to be used in measuring the performance of segmentation models \cite{seidlitz_robust_2022, yun_spectr_2021, haj-hassan_classifications_2017}. While both DSC and JSC use intersecting areas, there is a difference in how they are formulated. Using the same abbreviation for correctness in the pixel-by-pixel comparison, DSC and JSC are defined as
+    \[Dice = \frac{2TP}{2TP + FP + FN}\]
+    \[Jaccard = \frac{TP}{TP + FP + FN}\]
+
+    In both pixel-by-pixel and region-based evaluation methods, the minimum metric score is 0 while the maximum is 1.
+
+
+\section{Project Plan}
+
+    \subsection*{Proposed Methodology}
+    \paragraph{}
+    The project starts with preprocessing the collected multi-spectral images. Imperial College, as a collaborative effort with Charing Cross hospital, acquired a novel multi-spectral image dataset of the brain with more images acquired in the upcoming months. There are some steps that make up the preprocessing step. First, spectral bands with poor quality or high signal-to-noise ratio (SNR) are removed from the dataset by referring to the image acquisition process specification. This step can be omitted if no high SNR is found on any band across all images. The second step is to adjust the dataset illumination levels. When acquiring the multi-spectral images, it is possible that the system detects some spectral bands coming from external light sources. We can use the reference image as a guide to estimate the ratio of external light coming into the detector and then adjust the dataset accordingly. The third step is normalising the spectral information by transforming the reflectance value into a certain range. The exact normalisation technique that is used will be determined based on the dataset spectral distribution. The last step is band reduction using the HySIME technique. Reducing the number of bands by HySIME lowers the data dimensionality and minimises computation while retaining important spectral features.
+
+    \paragraph{}
+    After the dataset has been preprocessed, the next stage of the process can be commenced. There are three learning models that will be implemented to segment the images, support vector machine, random forest, and deep-learning-based models. Classical machine learning models such as SVM and RF are selected as they presented good accuracy with less computing power. Furthermore, classical machine learning models tend to be easier to interpret compared to deep learning models with their black-box characteristics, making it less challenging to diagnose any potential implementation error. Nevertheless, deep-learning models also offer promising results, especially since the introduction of the transformer. The deep-learning model architecture with spatial-spectral embeddings, such as the SpecTr \cite{yun_spectr_2021} will likely be the most suitable for this project.
+    
+    \paragraph{}
+    Comparison of the learning models will use the pixel-by-pixel and region-based evaluation methods mentioned in the literature review. Pixel-by-pixel evaluation offers insight into the model's correctness in classifying individual pixels based on their spectral data, while region-based evaluation emphasises the image's segmentation correctness. By testing both types of evaluation methods, the trade-off between spatial and spectral information can be discussed and presented to the readers.
+    
+    \subsection*{Development Process}
+    \paragraph{}
+    The project development process is presented as a list of four tasks. Most of the tasks need the preceding task on the list before it can be started, except for data preprocessing and learning model implementation. The goal is to have the results of the model evaluation ready by mid-June, before the poster milestone that will be shown later in this chapter. Below is the list of tasks of the development process:
+    
+    \begin{itemize}
+        \item Data Preprocessing — Cleaning and preprocessing collected data.
+        \item Learning Model Implementation — Implementing learning models in either MATLAB or Python.
+        \item Hyperparameter Tuning and Training — Evaluating the appropriate learning models parameter values and training them on the dataset.
+        \item Model Evaluation — Comparing the result of implemented learning models.
+    \end{itemize}
+
+    \paragraph{}
+    Each task is planned to be accomplished in three weeks and any setback affecting the task is to be minimised to an additional one and a half weeks.
+
+    \subsection*{Milestones}
+    \paragraph{}
+    There are several milestones throughout the course of this project, each one highlighting a course or an individually set deadline. The milestones should have an earlier date than the deadline to give ample time for revisions.
+
+    \begin{center}
+    \begin{tabular}{|m m|} 
+        \hline
+        Milestone & Date \\
+        \hline\hline
+        Data Preparation & 27 March 2023 \\ 
+        Working Implementation & 5 June 2023 \\
+        Poster & 12 June 2023 \\
+        Presentation & 28 August 2023 \\
+        Final Report & 4 September 2023 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+
+{\footnotesize\bibliography{ref}}
+% \bibliography{ref}
+
+\end{document}
