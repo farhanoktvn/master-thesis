@@ -1,5 +1,14 @@
 ## Project specific ##
-sandbox/dataset/*
+sandbox/dataset/raw/
+sandbox/dataset/stackreg*
+sandbox/matlab/regist_ptv/data/
+sandbox/matlab/regist_ptv/spectral_images/
+sandbox/preprocess_extract/dataset-sample/
+sandbox/preprocess_extract/data/
+sandbox/preprocess_extract/reg-labels/
+sandbox/regist_eval/dataset/
+sandbox/regist_eval/images/
+sandbox/rf_regist/weights/
 
 
 ## MacOS ##

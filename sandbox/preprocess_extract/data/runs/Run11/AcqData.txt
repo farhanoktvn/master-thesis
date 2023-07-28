@@ -1,6 +1,0 @@
-
-Exp. Time (ms)	50.050
-Gain	0.000
-Pixel Clock (Hz)	5.000
-Framerate (Hz)	30.000
-Timestamp	11:31:08.296

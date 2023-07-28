@@ -11,12 +11,12 @@ PREPROCESSING_METHODS = {
 
 # Feature matching params
 K = 2
-LOWES_RATIO = 0.8
+LOWES_RATIO = 0.75
 
 
 class RegA:
     def __init__(
-        self, preprocessing_methods=["eq_hist"], extraction_method="sift", matching_method="flann"
+        self, preprocessing_methods=["eq_hist"], extraction_method="sift", matching_method="bf"
     ):
         self._init_methods(preprocessing_methods, extraction_method, matching_method)
 
@@ -52,7 +52,10 @@ class RegA:
                     img, -1, np.array([[0, -1, 0], [-1, 9, -1], [0, -1, 0]])
                 )
             else:
-                img = PREPROCESSING_METHODS[method](img)
+                try:
+                    img = PREPROCESSING_METHODS[method](img)
+                except:
+                    print(img)
         return img
 
     def detect_keypoint(self, img):
@@ -81,10 +84,15 @@ class RegA:
         if len(good_matches) > MIN_MATCH_COUNT:
             src_pts = np.float32([kp_a[m.queryIdx].pt for m in good_matches]).reshape(-1, 1, 2)
             dst_pts = np.float32([kp_b[m.trainIdx].pt for m in good_matches]).reshape(-1, 1, 2)
-            M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
+            M, _ = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
         else:
-            print("Not enough matches are found - {}/{}".format(len(good_matches), MIN_MATCH_COUNT))
-            return None
+            # print(
+            #     "Not enough matches are found - {}/{}".format(len(good_matches), MIN_MATCH_COUNT),
+            #     flush=True,
+            # )
+            raise ValueError("Not enough matches are found")
 
         h, w = img_b.shape
         return cv2.warpPerspective(img_a, M, (w, h))
+        # return cv2.warpPerspective(img_a, M, (w, h)), M
+        # return M, w, h

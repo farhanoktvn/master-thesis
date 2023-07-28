@@ -3,7 +3,7 @@ from loader.run import Run
 
 class Sample:
     def __init__(self, sample_id, root_dir, sample_df):
-        self.sampl = sample_id
+        self.sample_id = sample_id
         self.root_dir = root_dir
         self.runs = self._init_runs(sample_df)
 
@@ -20,6 +20,7 @@ class Sample:
                 continue
             runs.append(
                 Run(
+                    self.sample_id,
                     run_id,
                     self.root_dir,
                     sample_df.loc[sample_df["run_id"] == run_id],

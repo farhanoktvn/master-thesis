@@ -1,0 +1,687 @@
+{
+  "data": [
+    {
+      "id": "HS001",
+      "ref_runs": {
+        "orient": ["Run01", "Run25", "Run26"],
+        "white": ["Run02", "Run03"],
+        "dark": ["Run27", "Run28"]
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentation"],
+        "capillary": {
+          "included": "HS001 - Trial with cappillary included",
+          "excluded": "HS001 - Trial with capillaries excluded"
+        },
+        "runs": {
+          "Run 04-08": ["Run04", "Run05", "Run06", "Run07", "Run08"],
+          "Run 11-12": ["Run11", "Run12"],
+          "Run 13-18": ["Run13", "Run14", "Run15", "Run16", "Run17", "Run18"],
+          "Run 19-24": ["Run19", "Run20", "Run21", "Run22", "Run23", "Run24"]
+        }
+      },
+      "transforms": {
+        "Run 04-08": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 11-12": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 13-18": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 19-24": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS002",
+      "ref_runs": {
+        "orient": [],
+        "white": ["Run06", "Run07"],
+        "dark": ["Run08", "Run09", "Run14", "Run15"]
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentation"],
+        "capillary": {
+          "included": "HS002 - capillary included",
+          "excluded": "HS002 - capillaries excluded"
+        },
+        "runs": {
+          "Run 01-02": ["Run01", "Run02"],
+          "Run 03-04": ["Run03", "Run04"],
+          "Run 10-11": ["Run10", "Run11"],
+          "Run 12-13": ["Run12", "Run13"]
+        }
+      },
+      "transforms": {
+        "Run 01-02": {
+          "flip": "v",
+          "rotate": 90
+        },
+        "Run 03-04": {
+          "flip": "v",
+          "rotate": 90
+        },
+        "Run 10-11": {
+          "flip": "v",
+          "rotate": 90
+        },
+        "Run 12-13": {
+          "flip": "v",
+          "rotate": 90
+        }
+      }
+    },
+    {
+      "id": "HS003",
+      "ref_runs": {
+        "orient": ["Run01", "Run02"],
+        "white": ["Run03", "Run04"],
+        "dark": ["Run07"]
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentation"],
+        "capillary": {
+          "included": "HS003 - capillary included",
+          "excluded": "HS003 - Capillary excluded"
+        },
+        "runs": {
+          "Run 05-07": ["Run05", "Run06"],
+          "Run 08-12": ["Run08", "Run09", "Run10", "Run11"]
+        }
+      },
+      "transforms": {
+        "Run 05-07": {
+          "flip": "",
+          "rotate": 180
+        },
+        "Run 08-12": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS004",
+      "ref_runs": {
+        "orient": ["Run01"],
+        "white": ["Run02", "Run03", "Run11", "Run12"],
+        "dark": ["Run07"]
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS004 - capillary included",
+          "excluded": "HS004 - capillary excluded"
+        },
+        "runs": {
+          "Run 04-06": ["Run04", "Run05", "Run06"],
+          "Run 07-10": ["Run07", "Run08", "Run09", "Run10"]
+        }
+      },
+      "transforms": {
+        "Run 04-06": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 07-10": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS005",
+      "ref_runs": {
+        "orient": ["Run01", "Run02"],
+        "white": ["Run03", "Run04"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS005 - capillary included",
+          "excluded": "HS005 - capillary excluded"
+        },
+        "runs": {
+          "Run 05-06": ["Run05", "Run06"],
+          "Run 07": ["Run07"],
+          "Run 08-09": ["Run08", "Run09"],
+          "Run 10-11": ["Run10", "Run11"],
+          "Run 12": ["Run12"],
+          "Run 13": ["Run13"],
+          "Run 14": ["Run14"]
+        }
+      },
+      "transforms": {
+        "Run 05-06": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 07": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 08-09": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 10-11": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 12": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 13": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 14": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS006",
+      "ref_runs": {
+        "orient": [],
+        "white": ["Run02", "Run03"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS006 Capillary included",
+          "excluded": "HS006 Capillary excluded"
+        },
+        "runs": {
+          "Run 05-07": ["Run05", "Run06", "Run07", "Run07(II)"],
+          "Run 08": [
+            "Run08",
+            "Run08(II)",
+            "Run08(III)",
+            "Run08(IV)",
+            "Run08(V)",
+            "Run08(VI)"
+          ],
+          "Run 09": ["Run09"],
+          "Run 10": ["Run10"],
+          "Run 11": ["Run11"],
+          "Run 12": ["Run12"],
+          "Run 13": ["Run13", "Run13(II)"]
+        }
+      },
+      "transforms": {
+        "Run 05-07": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 08": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 09": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 10": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 11": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 12": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 13": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS007",
+      "ref_runs": {
+        "orient": ["Run01"],
+        "white": ["Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS007 - Capillaries included",
+          "excluded": "HS007 - Capillaries excluded"
+        },
+        "runs": {
+          "Run 03-04": ["Run03", "Run04"],
+          "Run 05-06": ["Run05", "Run06"],
+          "Run 07-09": ["Run07", "Run09"]
+        }
+      },
+      "transforms": {
+        "Run 03-04": {
+          "flip": "",
+          "rotate": 0
+        },
+        "Run 05-06": {
+          "flip": "",
+          "rotate": 0
+        },
+        "Run 07-09": {
+          "flip": "",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS008",
+      "ref_runs": {
+        "orient": [],
+        "white": ["Run01"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS008 Capillary included",
+          "excluded": "HS008 Capillary excluded"
+        },
+        "runs": {
+          "Run 02-04": ["Run02", "Run03", "Run04"],
+          "Run 05-06": ["Run05", "Run06"]
+        }
+      },
+      "transforms": {
+        "Run 02-04": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 05-06": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS009",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run001", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "",
+          "excluded": "HS009 - Trial with capillaries excluded"
+        },
+        "runs": {
+          "Run 04": ["Run04"],
+          "Run 05": ["Run05"],
+          "Run 06": ["Run06"],
+          "Run 07": ["Run07"],
+          "Run 08": ["Run08"],
+          "Run 09-10": ["Run09", "Run10"]
+        }
+      },
+      "transforms": {
+        "Run 04": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 05": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 06": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 07": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 08": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 09-10": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS010",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run01", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS010 Capillary included",
+          "excluded": "HS010 Capillaries excluded"
+        },
+        "runs": {
+          "Run04": ["Run04"],
+          "Run05": ["Run05"],
+          "Run060708": ["Run06", "Run07", "Run08"]
+        }
+      },
+      "transforms": {
+        "Run04": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run05": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run060708": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS011",
+      "ref_runs": {
+        "orient": [],
+        "white": ["Run01"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS011 Capillary included",
+          "excluded": "HS011 Capillary excluded"
+        },
+        "runs": {
+          "Run 02": ["Run02"],
+          "Run02bis": ["Run02"],
+          "Run03": ["Run03"],
+          "Run04": ["Run04"],
+          "Run05": ["Run05"],
+          "Run06": ["Run06"]
+        }
+      },
+      "transforms": {
+        "Run 02": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run02bis": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run03": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run04": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run05": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run06": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS012",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run01", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS012 Capillary included",
+          "excluded": "HS012 Capillary excluded"
+        },
+        "runs": {
+          "Run04": ["Run04"],
+          "Run05": ["Run05"]
+        }
+      },
+      "transforms": {
+        "Run04": {
+          "flip": "h",
+          "rotate": 90
+        },
+        "Run05": {
+          "flip": "h",
+          "rotate": 90
+        }
+      }
+    },
+    {
+      "id": "HS013",
+      "ref_runs": {
+        "orient": ["Run02"],
+        "white": ["Run01"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS013 Capillary included",
+          "excluded": "HS013 Capillary excluded"
+        },
+        "runs": {
+          "": ["Run03", "Run04", "Run05"]
+        }
+      },
+      "transforms": {
+        "": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS014",
+      "ref_runs": {
+        "orient": [],
+        "white": ["Run01"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS014 Capillary included",
+          "excluded": "HS014 Capillary excluded"
+        },
+        "runs": {
+          "Run 02-03": ["Run02", "Run03"],
+          "Run 04-05": ["Run04", "Run05"]
+        }
+      },
+      "transforms": {
+        "Run 02-03": {
+          "flip": "v",
+          "rotate": 0
+        },
+        "Run 04-05": {
+          "flip": "v",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS015",
+      "ref_runs": {
+        "orient": ["Run01"],
+        "white": ["Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS015 Capillary included",
+          "excluded": "HS015 Capillary excluded"
+        },
+        "runs": {
+          "Run03-04": ["Run03", "Run04"]
+        }
+      },
+      "transforms": {
+        "Run03-04": {
+          "flip": "h",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS016",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run01", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS016 Capillary included",
+          "excluded": "HS016 Capillary excluded"
+        },
+        "runs": {
+          "Run 04-05": ["Run04", "Run05"],
+          "Run 06-07": ["Run06", "Run07"]
+        }
+      },
+      "transforms": {
+        "Run 04-05": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 06-07": {
+          "flip": "h",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS017",
+      "ref_runs": {
+        "orient": [],
+        "white": [],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS017 Capillary included",
+          "excluded": "HS017 Capillary excluded"
+        },
+        "runs": {
+          "Run 01-03": ["Run01", "Run02", "Run03"],
+          "Run 04-05": ["Run04", "Run05"]
+        }
+      },
+      "transforms": {
+        "Run 01-03": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 04-05": {
+          "flip": "h",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS019",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run01", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "",
+          "excluded": "HS019"
+        },
+        "runs": {
+          "Run04-05": ["Run04", "Run05"],
+          "Run06-07": ["Run06", "Run07"],
+          "Run 08-09": ["Run08", "Run09"]
+        }
+      },
+      "transforms": {
+        "Run04-05": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run06-07": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 08-09": {
+          "flip": "h",
+          "rotate": 0
+        }
+      }
+    },
+    {
+      "id": "HS020",
+      "ref_runs": {
+        "orient": ["Run03"],
+        "white": ["Run01", "Run02"],
+        "dark": []
+      },
+      "data_runs": {
+        "label_dir": ["Labelling data", "Definitive segmentations"],
+        "capillary": {
+          "included": "HS020 Capillary included",
+          "excluded": "HS020 Capillary excluded"
+        },
+        "runs": {
+          "Run 04-05": ["Run04", "Run05"],
+          "Run 06-07": ["Run06", "Run07"],
+          "Run 08 and 10": ["Run08", "Run10"],
+          "Run 09 and 11": ["Run09", "Run11"]
+        }
+      },
+      "transforms": {
+        "Run 04-05": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 06-07": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 08 and 10": {
+          "flip": "h",
+          "rotate": 0
+        },
+        "Run 09 and 11": {
+          "flip": "h",
+          "rotate": 0
+        }
+      }
+    }
+  ]
+}

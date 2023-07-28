@@ -8,9 +8,10 @@ from enum import Enum
 from pathlib import Path
 from PIL import Image
 
-LABEL_IMG_PATTERN = '.*\.JPG'
+LABEL_IMG_PATTERN = '.*\.(JPG|png)'
 LABEL_MASK_PATTERN = '.*\.json'
 MSI_IMG_PATTERN = '.*\.png'
+MSI_IMG_LAMBDA_PATTERN = '.*560nm.*'
 
 
 class Tissue(Enum):
@@ -22,6 +23,7 @@ class Tissue(Enum):
     TUMOUR_MARGINS = 6
     WHITE_MATTER = 7
     DURA_MATTER = 8
+    ARTIFACT = 9
 
 TISSUE_DICT = {
     'Blood': Tissue.BLOOD,
@@ -31,7 +33,8 @@ TISSUE_DICT = {
     'Cortical Surface': Tissue.CORTICAL_SURFACE,
     'Tumour Margins': Tissue.TUMOUR_MARGINS,
     'White Matter': Tissue.WHITE_MATTER,
-    'Dura': Tissue.DURA_MATTER
+    'Dura': Tissue.DURA_MATTER,
+    'Artifact': Tissue.ARTIFACT
 }
 
 cwd = Path.cwd()
@@ -42,6 +45,12 @@ reg_label_folder = Path(cwd, 'reg-labels')
 # Load image
 def load_image(image_path):
     return np.asarray(Image.open(image_path).convert('L'))
+
+def load_image_green(image_path):
+    try:
+        return np.asarray(Image.open(image_path).getchannel('G'))
+    except ValueError:
+        return np.asarray(Image.open(image_path).convert('L'))
 
 # Load label mask
 def load_label_mask(label_mask_path, label_img_shape):
@@ -90,7 +99,7 @@ class SampleLoader:
         self.sample_path = Path(self.data_folder, self.id)
         self.references = sample_info.get('ref_runs')
         self.data = sample_info.get('data_runs')
-        self.transform = sample_info.get('transform')
+        self.transform = sample_info.get('transforms')
 
     def __repr__(self):
         return f"Sample(id={self.id})"
@@ -115,7 +124,10 @@ class SampleLoader:
         """
         
         labelled_folder = self.data.get('capillary').get('included') if with_cap else self.data.get('capillary').get('excluded')
-        labelled_img_path = Path(self.sample_path, 'Labelling data', 'Definitive segmentation', labelled_folder)
+        labelled_img_path = Path(self.sample_path, *self.data.get("label_dir"))
+        labelled_img_path = Path(labelled_img_path, labelled_folder)
+        if not labelled_img_path.exists():
+            raise Exception(f"Labelled image folder not found for sample: {self.sample_id} — {labelled_img_path}")
 
         paths = []
         run_group = self.data.get('runs').keys()
@@ -208,12 +220,17 @@ class RunLoader:
     
 
     def _init_data_paths(self, label_img_path, label_mask_path, run_img_paths, transform):
-        self.label_img = load_image(label_img_path)
+        # Label image
+        self.label_img = load_image_green(label_img_path)
         self.label_mask = load_label_mask(label_mask_path, self.label_img.shape)
+
+        # Run images
+        run_img_paths = [x for x in run_img_paths if re.match(MSI_IMG_LAMBDA_PATTERN, x.name)] # match only to certain lambda
         self.run_imgs = [load_image(run_img_path) for run_img_path in run_img_paths]
 
         # Known image transformation
         # Flip
+        transform = transform.get(self.run_group)
         img_flip = transform.get('flip')
         self.label_img = cv2.flip(self.label_img, 0) if 'v' in img_flip else self.label_img
         self.label_mask = cv2.flip(self.label_mask, 0) if 'v' in img_flip else self.label_mask
@@ -263,8 +280,13 @@ class RunLoader:
                 leave=False
             ):
                 # Find keypoints
-                kp_1, desc_1 = sift.detectAndCompute(label_img, None)
-                kp_2, desc_2 = sift.detectAndCompute(run_img, None)
+                # equalizeHist
+                label_img_cp = label_img.copy()
+                label_img_cp = cv2.equalizeHist(label_img_cp)
+                run_img_cp = run_img.copy()
+                run_img_cp = cv2.equalizeHist(run_img_cp)
+                kp_1, desc_1 = sift.detectAndCompute(label_img_cp, None)
+                kp_2, desc_2 = sift.detectAndCompute(run_img_cp, None)
 
                 # # brute force feature matching
                 # bf = cv2.BFMatcher()
@@ -289,7 +311,7 @@ class RunLoader:
                     best_kp_1 = kp_1
                     best_kp_2 = kp_2
 
-            MIN_MATCH_COUNT = 30
+            MIN_MATCH_COUNT = 7
             if max_good >= MIN_MATCH_COUNT:
                 src_pts = np.float32([ best_kp_1[m.queryIdx].pt for m in best_matches ]).reshape(-1,1,2)
                 dst_pts = np.float32([ best_kp_2[m.trainIdx].pt for m in best_matches ]).reshape(-1,1,2)
@@ -310,11 +332,11 @@ class RunLoader:
             return
 
         # Save label image
-        label_img_path = Path(self.save_path, self.sample_id, 'img', f'{self.run_id}.png')
+        label_img_path = Path(self.save_path, self.sample_id, 'label-img', f'{self.run_id}.png')
         label_img_path.parent.mkdir(parents=True, exist_ok=True)
         cv2.imwrite(str(label_img_path), self.label_img)
 
-        # label_mask_path = Path(self.save_path, self.sample_id, 'label', f'{self.run_id}.png')
+        # label_mask_path = Path(self.save_path, self.sample_id, 'label-mask', f'{self.run_id}.png')
         # label_mask_path.parent.mkdir(parents=True, exist_ok=True)
         # cv2.imwrite(str(label_mask_path), self.label_mask)
 
@@ -322,7 +344,7 @@ class RunLoader:
 if __name__ == '__main__':
     sample_infos = json.load(Path(data_folder, 'hs-info.json').open())
     samples = [SampleLoader(data_folder, sample_info) for sample_info in sample_infos.get('data')]
-    samples = samples[1:]
+    # samples = samples[2:]
 
     run_logs = ''
     for sample in tqdm.tqdm(samples, desc='Samples', position=0):
@@ -345,7 +367,7 @@ if __name__ == '__main__':
                 # )
                 reg = run_data.register_label()
                 if reg is not None:
-                    run_logs += f'Error at {sample.id}-{run_id.get("run_id")}\n'
+                    run_logs += f'Error at {sample.id}-{run_id.get("run_id")}: {reg}\n'
                     continue
                 run_data.save()
     

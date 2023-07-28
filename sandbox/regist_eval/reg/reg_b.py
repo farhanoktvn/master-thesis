@@ -1,26 +1,28 @@
 import cv2
 import numpy as np
+from PIL import Image, ImageEnhance
 
 from zep.feature.affine_ransac import Ransac
 from zep.feature.affine_transform import Affine
 
 
 LOWES_RATIO = 0.8
+SHARP_FILTER = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+ENHANCER = ImageEnhance.Sharpness
+ENHANCE_FACTOR = 1
 
 
 class RegB:
-    def __init__(self):
-        self.mode = "sift"
-        self.K = 3
-        self.threshold = 255
-        pass
+    def __init__(self, mode="sift", K=3, threshold=1):
+        self.mode = mode
+        self.K = K
+        self.threshold = threshold
 
     def extract_SIFT(self, img):
         if self.mode == "orb":
             sift = cv2.ORB_create(500)
         if self.mode == "sift":
             sift = cv2.SIFT_create()
-
         if self.mode == "akaze":
             sift = cv2.AKAZE_create()
         kp, desc = sift.detectAndCompute(img, None)
@@ -66,9 +68,21 @@ class RegB:
         merge = target * 0.5 + warp * 0.5
         return warp, merge
 
+    def enhance(self, img):
+        # img = cv2.filter2D(img, ddepth=-1, kernel=SHARP_FILTER)
+        # img = Image.fromarray(img)
+        # img = ENHANCER(img).enhance(ENHANCE_FACTOR)
+        return np.array(img, dtype=np.uint8)
+
     def register(self, img_a, img_b):
         img_a_cp = img_a.copy()
+        img_a_cp = cv2.equalizeHist(img_a_cp)
         img_b_cp = img_b.copy()
+        img_b_cp = cv2.equalizeHist(img_b_cp)
+
+        # sharpen image b (target/spectral image)
+        img_b_cp = self.enhance(img_b_cp)
+
         kp_s, desc_s = self.extract_SIFT(img_a_cp)
         kp_t, desc_t = self.extract_SIFT(img_b_cp)
 
@@ -86,4 +100,7 @@ class RegB:
             return np.array(None)
         else:
             warp_img, merge_img = self.warp_image(img_a, img_b, M)
-            return warp_img, merge_img
+            return warp_img
+            # return warp_img, merge_img, M
+            # return M, img_b.shape[1], img_b.shape[0]
+            # return M

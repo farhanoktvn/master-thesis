@@ -12,7 +12,8 @@ CHANNEL_WAVELENGTH = {
 
 
 class Run:
-    def __init__(self, run_id, root_dir, run_df):
+    def __init__(self, sample_id, run_id, root_dir, run_df):
+        self.sample_id = sample_id
         self.run_id = run_id
         self.root_dir = root_dir
         self._init_run(run_df)
@@ -45,16 +46,19 @@ class Run:
             image = load_bw_img(self.label_img_path)
         else:  # color
             image = load_color_img(self.label_img_path)
-            if channel == "bw":
+            try:
+                if channel == "bw":
+                    image = image.convert("L")
+                elif channel == "r":
+                    image = image.getchannel("R")
+                elif channel == "g":
+                    image = image.getchannel("G")
+                elif channel == "b":
+                    image = image.getchannel("B")
+                else:
+                    pass
+            except ValueError:
                 image = image.convert("L")
-            elif channel == "r":
-                image = image.getchannel("R")
-            elif channel == "g":
-                image = image.getchannel("G")
-            elif channel == "b":
-                image = image.getchannel("B")
-            else:
-                pass
 
         # Convert to numpy array
         image = np.asarray(image)
@@ -81,7 +85,7 @@ class Run:
 
         return image
 
-    def get_spectral_images(self, collection_idx=0, channel=""):
+    def get_spectral_images(self, collection_idx=0, channel="", with_path=False):
         collection = self.collection[collection_idx]
 
         # Filter by channel
@@ -89,16 +93,24 @@ class Run:
             new_collection = list()
             wavelength_range = CHANNEL_WAVELENGTH[channel]
             for nm in range(wavelength_range[0], wavelength_range[1], 10):
-                new_collection.append([p for p in collection if str(nm) in p.name][0])
+                try:
+                    new_collection.append([p for p in collection if str(nm) in p.name][0])
+                except IndexError as e:
+                    raise Exception(f"Cannot find image with wavelength {nm} in {collection[0]}")
             collection = new_collection
 
         # Load images
         spectral_images = list()
+        spectral_images_paths = list()
         for image_path in collection:
             image = load_bw_img(image_path)
             image = np.asarray(image)
             spectral_images.append(image)
+            if with_path:
+                spectral_images_paths.append(image_path)
 
+        if with_path:
+            return spectral_images, spectral_images_paths
         return spectral_images
 
     def get_spectral_image(self, wavelength=560, collection_idx=0):
