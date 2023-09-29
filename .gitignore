@@ -1,4 +1,10 @@
 ## Project specific ##
+sandbox/adjust/result/
+sandbox/analysis/new_x_data.npy
+sandbox/analysis/new_x_data_2.npy
+sandbox/analysis/new_y_data.npy
+sandbox/analysis/new_y_data_2.npy
+sandbox/animate/result/
 sandbox/dataset/raw/
 sandbox/dataset/stackreg*
 sandbox/matlab/regist_ptv/data/

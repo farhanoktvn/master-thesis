@@ -1,0 +1,532 @@
+\glsdefs@newdocentry{auc}%
+{%
+name={\acronymfont {\glsentryshort {auc}}},%
+sort={AUC},%
+type={acronym},%
+first={AUC},%
+firstplural={AUCs},%
+text={AUC},%
+plural={AUCs},%
+description={Area Under the ROC Curve},%
+descriptionplural={Area Under the ROC Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Area Under the ROC Curve},%
+longplural={Area Under the ROC Curves},%
+short={AUC},%
+shortplural={AUCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ccd}%
+{%
+name={\acronymfont {\glsentryshort {ccd}}},%
+sort={CCD},%
+type={acronym},%
+first={CCD},%
+firstplural={CCDs},%
+text={CCD},%
+plural={CCDs},%
+description={Charge-coupled Device},%
+descriptionplural={Charge-coupled Device},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Charge-coupled Device},%
+longplural={Charge-coupled Devices},%
+short={CCD},%
+shortplural={CCDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cnn}%
+{%
+name={\acronymfont {\glsentryshort {cnn}}},%
+sort={CNN},%
+type={acronym},%
+first={CNN},%
+firstplural={CNNs},%
+text={CNN},%
+plural={CNNs},%
+description={Convolutional Neural Network},%
+descriptionplural={Convolutional Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Convolutional Neural Network},%
+longplural={Convolutional Neural Networks},%
+short={CNN},%
+shortplural={CNNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dlk}%
+{%
+name={\acronymfont {\glsentryshort {dlk}}},%
+sort={DLK},%
+type={acronym},%
+first={DLK},%
+firstplural={DLKs},%
+text={DLK},%
+plural={DLKs},%
+description={Deformable Lucas-Kanade},%
+descriptionplural={Deformable Lucas-Kanade},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Deformable Lucas-Kanade},%
+longplural={Deformable Lucas-Kanades},%
+short={DLK},%
+shortplural={DLKs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gms}%
+{%
+name={\acronymfont {\glsentryshort {gms}}},%
+sort={GMS},%
+type={acronym},%
+first={GMS},%
+firstplural={GMSs},%
+text={GMS},%
+plural={GMSs},%
+description={Gradient Magnitude Similarity},%
+descriptionplural={Gradient Magnitude Similarity},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gradient Magnitude Similarity},%
+longplural={Gradient Magnitude Similaritys},%
+short={GMS},%
+shortplural={GMSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gmsd}%
+{%
+name={\acronymfont {\glsentryshort {gmsd}}},%
+sort={GMSD},%
+type={acronym},%
+first={GMSD},%
+firstplural={GMSDs},%
+text={GMSD},%
+plural={GMSDs},%
+description={Gradient Magnitude Similarity Deviation},%
+descriptionplural={Gradient Magnitude Similarity Deviation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gradient Magnitude Similarity Deviation},%
+longplural={Gradient Magnitude Similarity Deviations},%
+short={GMSD},%
+shortplural={GMSDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gmsm}%
+{%
+name={\acronymfont {\glsentryshort {gmsm}}},%
+sort={GMSM},%
+type={acronym},%
+first={GMSM},%
+firstplural={GMSMs},%
+text={GMSM},%
+plural={GMSMs},%
+description={Gradient Magnitude Similarity Mean},%
+descriptionplural={Gradient Magnitude Similarity Mean},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gradient Magnitude Similarity Mean},%
+longplural={Gradient Magnitude Similarity Means},%
+short={GMSM},%
+shortplural={GMSMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hsi}%
+{%
+name={\acronymfont {\glsentryshort {hsi}}},%
+sort={HSI},%
+type={acronym},%
+first={HSI},%
+firstplural={HSIs},%
+text={HSI},%
+plural={HSIs},%
+description={Hyper-spectral Imaging},%
+descriptionplural={Hyper-spectral Imaging},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hyper-spectral Imaging},%
+longplural={Hyper-spectral Imagings},%
+short={HSI},%
+shortplural={HSIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{iou}%
+{%
+name={\acronymfont {\glsentryshort {iou}}},%
+sort={IoU},%
+type={acronym},%
+first={IoU},%
+firstplural={IoUs},%
+text={IoU},%
+plural={IoUs},%
+description={Intersection over Union},%
+descriptionplural={Intersection over Union},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intersection over Union},%
+longplural={Intersection over Unions},%
+short={IoU},%
+shortplural={IoUs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lctf}%
+{%
+name={\acronymfont {\glsentryshort {lctf}}},%
+sort={LCTF},%
+type={acronym},%
+first={LCTF},%
+firstplural={LCTFs},%
+text={LCTF},%
+plural={LCTFs},%
+description={Liquid Crystal Tunable Filter},%
+descriptionplural={Liquid Crystal Tunable Filter},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Liquid Crystal Tunable Filter},%
+longplural={Liquid Crystal Tunable Filters},%
+short={LCTF},%
+shortplural={LCTFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ml}%
+{%
+name={\acronymfont {\glsentryshort {ml}}},%
+sort={ML},%
+type={acronym},%
+first={ML},%
+firstplural={MLs},%
+text={ML},%
+plural={MLs},%
+description={Machine Learning},%
+descriptionplural={Machine Learning},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Machine Learning},%
+longplural={Machine Learnings},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mse}%
+{%
+name={\acronymfont {\glsentryshort {mse}}},%
+sort={MSE},%
+type={acronym},%
+first={MSE},%
+firstplural={MSEs},%
+text={MSE},%
+plural={MSEs},%
+description={Mean-Square Error},%
+descriptionplural={Mean-Square Error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mean-Square Error},%
+longplural={Mean-Square Errors},%
+short={MSE},%
+shortplural={MSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{msi}%
+{%
+name={\acronymfont {\glsentryshort {msi}}},%
+sort={MSI},%
+type={acronym},%
+first={MSI},%
+firstplural={MSIs},%
+text={MSI},%
+plural={MSIs},%
+description={Multi-spectral Imaging},%
+descriptionplural={Multi-spectral Imaging},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multi-spectral Imaging},%
+longplural={Multi-spectral Imagings},%
+short={MSI},%
+shortplural={MSIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{nn}%
+{%
+name={\acronymfont {\glsentryshort {nn}}},%
+sort={NN},%
+type={acronym},%
+first={NN},%
+firstplural={NNs},%
+text={NN},%
+plural={NNs},%
+description={Neural Network},%
+descriptionplural={Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Neural Network},%
+longplural={Neural Networks},%
+short={NN},%
+shortplural={NNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{pfn}%
+{%
+name={\acronymfont {\glsentryshort {pfn}}},%
+sort={PFN},%
+type={acronym},%
+first={PFN},%
+firstplural={PFNs},%
+text={PFN},%
+plural={PFNs},%
+description={Progressive Finite Newton},%
+descriptionplural={Progressive Finite Newton},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Progressive Finite Newton},%
+longplural={Progressive Finite Newtons},%
+short={PFN},%
+shortplural={PFNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{psnr}%
+{%
+name={\acronymfont {\glsentryshort {psnr}}},%
+sort={PSNR},%
+type={acronym},%
+first={PSNR},%
+firstplural={PSNRs},%
+text={PSNR},%
+plural={PSNRs},%
+description={Peak Signal-to-Noise Ratio},%
+descriptionplural={Peak Signal-to-Noise Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Peak Signal-to-Noise Ratio},%
+longplural={Peak Signal-to-Noise Ratios},%
+short={PSNR},%
+shortplural={PSNRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rgb}%
+{%
+name={\acronymfont {\glsentryshort {rgb}}},%
+sort={RGB},%
+type={acronym},%
+first={RGB},%
+firstplural={RGBs},%
+text={RGB},%
+plural={RGBs},%
+description={red, green and blue},%
+descriptionplural={red, green and blue},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={red, green and blue},%
+longplural={red, green and blues},%
+short={RGB},%
+shortplural={RGBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{roc}%
+{%
+name={\acronymfont {\glsentryshort {roc}}},%
+sort={ROC},%
+type={acronym},%
+first={ROC},%
+firstplural={ROCs},%
+text={ROC},%
+plural={ROCs},%
+description={Receiver Operating Charateristic},%
+descriptionplural={Receiver Operating Charateristic},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Receiver Operating Charateristic},%
+longplural={Receiver Operating Charateristics},%
+short={ROC},%
+shortplural={ROCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ssim}%
+{%
+name={\acronymfont {\glsentryshort {ssim}}},%
+sort={SSIM},%
+type={acronym},%
+first={SSIM},%
+firstplural={SSIMs},%
+text={SSIM},%
+plural={SSIMs},%
+description={Structural Similarity Index Measure},%
+descriptionplural={Structural Similarity Index Measure},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Structural Similarity Index Measure},%
+longplural={Structural Similarity Index Measures},%
+short={SSIM},%
+shortplural={SSIMs},%
+counter={page},%
+parent={},%
+%
+}%
+

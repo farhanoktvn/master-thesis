@@ -10,32 +10,20 @@ st.set_page_config(page_title="Image-Comparison Example", layout="centered")
 # open images
 
 reg_paths = [
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/1/reg_a.png"),
     Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/1/SISLK_Result/Registered_Sequence/frame_0.png"
+        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/dataset/registered_short/HS020/Run06/g_label.png"
     ),
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/2/reg_a.png"),
     Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/2/SISLK_Result/Registered_Sequence/frame_0.png"
-    ),
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/3/reg_a.png"),
-    Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/3/SISLK_Result/Registered_Sequence/frame_0.png"
+        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/dataset/registered_short/HS020/Run06/g_label.png"
     ),
 ]
 
 tgt_paths = [
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/1/target.png"),
     Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/1/SISLK_Result/Registered_Sequence/frame_1.png"
+        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/dataset/registered_short/HS020/Run06/g_spectral.png"
     ),
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/2/target.png"),
     Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/2/SISLK_Result/Registered_Sequence/frame_1.png"
-    ),
-    Path("/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/3/target.png"),
-    Path(
-        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/images/3/SISLK_Result/Registered_Sequence/frame_1.png"
+        "/Users/farhanoktavian/imperial/thesis/sandbox/regist_eval/dataset/registered_short/HS020/Run06/g_fine.png"
     ),
 ]
 

@@ -1,0 +1,11 @@
+Figure:
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[h]{0.7\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/camera-system.png}
+    \caption{Image capture system diagram (left) and its photo in the operating room (right).}
+    \label{fig:camera-system}
+\end{minipage}
+\end{figure}

@@ -99,8 +99,8 @@ class RegB:
         if M is None:
             return np.array(None)
         else:
-            warp_img, merge_img = self.warp_image(img_a, img_b, M)
-            return warp_img
+            # warp_img, merge_img = self.warp_image(img_a, img_b, M)
+            # return warp_img
             # return warp_img, merge_img, M
-            # return M, img_b.shape[1], img_b.shape[0]
+            return M, img_b.shape[1], img_b.shape[0]
             # return M
